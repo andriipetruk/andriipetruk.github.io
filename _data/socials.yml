@@ -1,6 +1,6 @@
 # Social media links and usernames.
 # Order here = display order. See: https://github.com/george-gca/jekyll-socials
-cv_pdf: # /assets/pdf/cv.pdf — drop your CV PDF here when you have one
+# cv_pdf: /assets/pdf/cv.pdf  # uncomment after dropping your CV PDF in assets/pdf/
 email: andrey.petruk@gmail.com
 github_username: andriipetruk
 # linkedin_username:
