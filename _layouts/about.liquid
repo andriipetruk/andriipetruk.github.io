@@ -1,80 +1,57 @@
 ---
 layout: default
 ---
-<div class="post">
-  <header class="post-header">
-    <h1 class="post-title">
-      {% if site.title == 'blank' %}
-        <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
-        {{ site.last_name }}
-      {% else %}
-        {{ site.title }}
-      {% endif %}
-    </h1>
-    <p class="desc">{{ page.subtitle }}</p>
-  </header>
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-text">
+      <p class="hero-eyebrow">Systems Researcher · Infrastructure Architect</p>
 
-  <article>
-    {% if page.profile %}
-      <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
-        {% if page.profile.image %}
-          {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
-          {% if page.profile.image_circular %}
-            {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
-          {% else %}
-            {% assign profile_image_class = 'img-fluid z-depth-1
-      rounded' %}
-          {% endif %}
-          {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px)
-      30vw, 95vw"{% endcapture %}
-          {%
-            include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
+      <h1 class="hero-name">
+        <span>Andrii</span>
+        <span>Petruk</span>
+      </h1>
+
+      <p class="hero-tagline">
+        {{ page.tagline | default: "Building trustworthy intelligent systems at the intersection of AI, infrastructure, and architecture." }}
+      </p>
+
+      <ul class="hero-pillars">
+        <li><span class="pillar-num">01</span><span class="pillar-text">LLM Reasoning &amp; Safety</span></li>
+        <li><span class="pillar-num">02</span><span class="pillar-text">Cloud-Native Architecture</span></li>
+        <li><span class="pillar-num">03</span><span class="pillar-text">Autonomous Infrastructure</span></li>
+      </ul>
+
+      <nav class="hero-cta" aria-label="Primary">
+        <a class="hero-cta-link" href="{{ '/research/' | relative_url }}">Papers <span aria-hidden="true">→</span></a>
+        <a class="hero-cta-link" href="{{ '/essays/' | relative_url }}">Writing <span aria-hidden="true">→</span></a>
+        <a class="hero-cta-link" href="{{ '/projects/' | relative_url }}">Projects <span aria-hidden="true">→</span></a>
+        <a class="hero-cta-link" href="mailto:{{ site.data.socials.email }}">Work With Me <span aria-hidden="true">→</span></a>
+      </nav>
+    </div>
+
+    <div class="hero-portrait">
+      {% if page.profile and page.profile.image %}
+        {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
+        {% capture sizes %}(min-width: 992px) 380px, (min-width: 576px) 40vw, 70vw{% endcapture %}
+        {%
+          include figure.liquid
+            loading="eager"
+            path=profile_image_path
+            class="hero-portrait-img"
+            sizes=sizes
+            alt="Portrait of Andrii Petruk"
             cache_bust=true
-          %}
-        {% endif %}
-        {% if page.profile.more_info %}
-          <div class="more-info">{{ page.profile.more_info }}</div>
-        {% endif %}
-      </div>
-    {% endif %}
+        %}
+      {% endif %}
+    </div>
+  </div>
 
-    <div class="clearfix">{{ content }}</div>
+  {% if content and content != "" %}
+    <div class="hero-note">{{ content }}</div>
+  {% endif %}
 
-    <!-- News -->
-    {% if page.announcements and page.announcements.enabled %}
-      <h2>
-        <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>
-      </h2>
-      {% include news.liquid limit=true %}
-    {% endif %}
-
-    <!-- Latest posts -->
-    {% if page.latest_posts and page.latest_posts.enabled %}
-      <h2>
-        <a href="{{ '/blog/' | relative_url }}" style="color: inherit">latest posts</a>
-      </h2>
-      {% include latest_posts.liquid %}
-    {% endif %}
-
-    <!-- Selected papers -->
-    {% if page.selected_papers %}
-      <h2>
-        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">selected publications</a>
-      </h2>
-      {% include selected_papers.liquid %}
-    {% endif %}
-
-    <!-- Social -->
-    {% if page.social %}
-      <div class="social">
-        <div class="contact-icons">{% social_links %}</div>
-
-        <div class="contact-note">{{ site.contact_note }}</div>
-      </div>
-    {% endif %}
-
-    {% if site.newsletter and site.newsletter.enabled and site.footer_fixed %}
-      {% include newsletter.liquid center=true %}
-    {% endif %}
-  </article>
-</div>
+  <div class="hero-meta">
+    <div class="hero-socials">{% social_links %}</div>
+    <p class="hero-contact-note">{{ site.contact_note }}</p>
+  </div>
+</section>

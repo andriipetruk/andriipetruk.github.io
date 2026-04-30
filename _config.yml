@@ -7,12 +7,12 @@ first_name: Andrii
 middle_name:
 last_name: Petruk
 contact_note: >
-  Best way to reach me is by email.
+  The fastest way to reach me is by email.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Personal site of Andrii Petruk — research, writing, and projects.
+  Andrii Petruk — systems researcher and infrastructure architect building trustworthy intelligent systems.
 footer_text: >
-  &copy; Andrii Petruk. Built with <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> and <a href="https://github.com/alshedivat/al-folio">al-folio</a>.
-keywords: andrii petruk, personal website, research, blog, papers
+  &copy; Andrii Petruk.
+keywords: andrii petruk, systems research, infrastructure, llm reasoning, autonomous infrastructure, kubx
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: ap # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
@@ -59,7 +59,7 @@ posts_in_search: true
 bib_search: true
 
 # Dimensions
-max_width: 930px
+max_width: 980px
 
 # -----------------------------------------------------------------------------
 # Open Graph & Schema.org
@@ -89,9 +89,9 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: blog # blog_name will be displayed in your blog page
-blog_description: notes and writing
-permalink: /blog/:year/:title/
+blog_name: essays # blog_name will be displayed in your blog page
+blog_description: notes on building intelligent systems
+permalink: /essays/:year/:title/
 lsi: false # produce an index for related posts
 
 # Pagination
@@ -253,9 +253,9 @@ jekyll-archives:
   posts:
     enabled: [year, tags, categories] # enables year, tag and category archives (remove if you need to disable one of them).
     permalinks:
-      year: "/blog/:year/"
-      tags: "/blog/:type/:name/"
-      categories: "/blog/:type/:name/"
+      year: "/essays/:year/"
+      tags: "/essays/:type/:name/"
+      categories: "/essays/:type/:name/"
   books:
     enabled: [year, tags, categories] # enables year, tag and category archives (remove if you need to disable one of them).
 
@@ -449,7 +449,7 @@ third_party_libraries:
     version: "5.5.0"
   google_fonts:
     url:
-      fonts: "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&display=swap"
+      fonts: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Roboto:wght@300;400;500;700&family=Roboto+Slab:wght@100;300;400;500;700&family=Material+Icons&display=swap"
   highlightjs:
     integrity:
       css:

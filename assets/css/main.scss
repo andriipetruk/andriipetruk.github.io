@@ -37,3 +37,6 @@
 @use "font-awesome/brands";
 @use "font-awesome/solid";
 @use "font-awesome/regular";
+
+// Research-lab style overrides — must come last so it can override base partials.
+@use "lab";

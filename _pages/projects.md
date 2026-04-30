@@ -2,64 +2,57 @@
 layout: page
 title: projects
 permalink: /projects/
-description: A growing collection of your cool projects.
-nav: false
+nav: true
 nav_order: 3
-display_categories: [work, fun]
-horizontal: false
+description: >
+  Things I'm building or have built — research artifacts, infrastructure, and product.
 ---
 
-<!-- pages/projects.md -->
-<div class="projects">
-{% if site.enable_project_categories and page.display_categories %}
-  <!-- Display categorized projects -->
-  {% for category in page.display_categories %}
-  <a id="{{ category }}" href=".#{{ category }}">
-    <h2 class="category">{{ category }}</h2>
-  </a>
-  {% assign categorized_projects = site.projects | where: "category", category %}
-  {% assign sorted_projects = categorized_projects | sort: "importance" %}
-  <!-- Generate cards for each project -->
-  {% if page.horizontal %}
-  <div class="container">
-    <div class="row row-cols-1 row-cols-md-2">
-    {% for project in sorted_projects %}
-      {% include projects_horizontal.liquid %}
-    {% endfor %}
-    </div>
-  </div>
-  {% else %}
-  <div class="row row-cols-1 row-cols-md-3">
-    {% for project in sorted_projects %}
-      {% include projects.liquid %}
-    {% endfor %}
-  </div>
-  {% endif %}
-  {% endfor %}
+<section class="project-narrative">
 
-{% else %}
+  <article class="project-block project-feature">
+    <p class="project-eyebrow">Flagship</p>
+    <h2><a href="https://kubx.io" target="_blank" rel="noopener">KubX</a></h2>
+    <p class="project-summary">
+      An autonomous control plane for cloud-native infrastructure. KubX treats
+      a Kubernetes cluster as a substrate for closed-loop agents — observe,
+      reason, propose, verify, apply.
+    </p>
+    <p>
+      The thesis: most operational toil disappears once the system can describe
+      its own state precisely enough for an LLM to reason about it. The hard
+      part isn't generating actions; it's generating actions that are safe,
+      reversible, and auditable.
+    </p>
+  </article>
 
-<!-- Display projects without categories -->
+  <article class="project-block">
+    <p class="project-eyebrow">Product</p>
+    <h2>Starmingo</h2>
+    <p>
+      Earlier work in commerce infrastructure — high-throughput backends,
+      payments, and the unglamorous reliability work that makes the rest possible.
+    </p>
+  </article>
 
-{% assign sorted_projects = site.projects | sort: "importance" %}
+  <article class="project-block">
+    <p class="project-eyebrow">Experiments</p>
+    <h2>Research artifacts</h2>
+    <p>
+      Smaller probes around LLM reasoning, prompt-program composition, and
+      tooling for agents that touch real infrastructure. A few become essays;
+      a few become preprints.
+    </p>
+  </article>
 
-  <!-- Generate cards for each project -->
+  <article class="project-block">
+    <p class="project-eyebrow">Open source</p>
+    <h2>Code</h2>
+    <p>
+      Public repositories live on
+      <a href="https://github.com/{{ site.data.socials.github_username }}" target="_blank" rel="noopener">GitHub</a>.
+      Most of what I publish is small and self-contained — utilities, sketches, reproductions.
+    </p>
+  </article>
 
-{% if page.horizontal %}
-
-  <div class="container">
-    <div class="row row-cols-1 row-cols-md-2">
-    {% for project in sorted_projects %}
-      {% include projects_horizontal.liquid %}
-    {% endfor %}
-    </div>
-  </div>
-  {% else %}
-  <div class="row row-cols-1 row-cols-md-3">
-    {% for project in sorted_projects %}
-      {% include projects.liquid %}
-    {% endfor %}
-  </div>
-  {% endif %}
-{% endif %}
-</div>
+</section>
