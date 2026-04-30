@@ -3,32 +3,46 @@ const ninja = document.querySelector('ninja-keys');
 
 // add the home and posts menu items
 ninja.data = [{
-    id: "nav-about",
-    title: "about",
+    id: "nav-home",
+    title: "home",
     section: "Navigation",
     handler: () => {
       window.location.href = "/";
     },
-  },{id: "nav-blog",
-          title: "blog",
+  },{id: "nav-research",
+          title: "research",
+          description: "Notes, preprints, and ongoing work on how intelligent systems should reason — not just generate.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/research/";
+          },
+        },{id: "nav-essays",
+          title: "essays",
           description: "",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/blog/";
+            window.location.href = "/essays/index.html";
           },
-        },{id: "nav-publications",
-          title: "publications",
-          description: "papers and preprints, in reverse chronological order.",
+        },{id: "nav-projects",
+          title: "projects",
+          description: "Things I&#39;m building or have built — research artifacts, infrastructure, and product.",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/publications/";
+            window.location.href = "/projects/";
           },
-        },{id: "nav-cv",
-          title: "CV",
-          description: "background, experience, and education.",
+        },{id: "nav-about",
+          title: "about",
+          description: "Ukrainian engineer based in California. From SRE to systems research and intelligent infrastructure.",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/cv/";
+            window.location.href = "/about/";
+          },
+        },{id: "nav-now",
+          title: "now",
+          description: "What I&#39;m focused on at the moment. Inspired by /now.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/now/";
           },
         },{id: "post-hello",
         
@@ -38,7 +52,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2026/hello/";
+            window.location.href = "/essays/2026/hello/";
           
         },
       },{id: "news-launched-andriipetruk-com",
