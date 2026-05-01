@@ -1,15 +1,15 @@
-_site
-.bundle
-.DS_store
-.idea
-.jekyll-cache
-.jekyll-metadata
-.ruby-version
-.sass-cache
-.tweet-cache
-.venv
-assets/libs/
-assets/rendercv/rendercv_output/*.typ
-Gemfile.lock
+# Next.js
+.next/
+out/
 node_modules/
-vendor
+.env*.local
+*.tsbuildinfo
+next-env.d.ts
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+
+# Source materials (working files, not deployed)
+me-fotos.png
