@@ -1,29 +1,16 @@
-import { Inter, JetBrains_Mono } from 'next/font/google';
-import ThemeScript from './components/ThemeScript';
 import './globals.css';
-
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap'
-});
-
-const mono = JetBrains_Mono({
-  subsets: ['latin'],
-  variable: '--font-mono',
-  display: 'swap'
-});
 
 export const metadata = {
   metadataBase: new URL('https://andriipetruk.com'),
   title: {
-    default: 'Andrii Petruk — Systems Researcher · Infrastructure Architect · AI Systems Builder',
-    template: '%s · Andrii Petruk'
+    default: 'Andrii Petruk — Systems Researcher, Infrastructure Architect, AI Systems Builder',
+    template: '%s | Andrii Petruk'
   },
   description:
-    'Personal research site of Andrii Petruk — systems research, LLM reasoning safety, cloud-native architecture, and autonomous infrastructure.',
+    'Personal research lab of Andrii Petruk — systems research, LLM reasoning safety, cloud-native architecture, distributed systems, reliable infrastructure, and autonomous infrastructure.',
   keywords: [
     'Andrii Petruk',
+    'Andrii Petruk research',
     'Systems Researcher',
     'Infrastructure Architect',
     'AI Systems Builder',
@@ -34,8 +21,10 @@ export const metadata = {
     'distributed systems',
     'site reliability engineering',
     'Kubernetes',
+    'DevOps',
     'AI infrastructure',
-    'KubX'
+    'KubX',
+    'architecture reasoning benchmark'
   ],
   authors: [{ name: 'Andrii Petruk' }],
   creator: 'Andrii Petruk',
@@ -71,11 +60,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <head>
-        <ThemeScript />
-      </head>
-      <body className={`${inter.variable} ${mono.variable}`}>{children}</body>
+    <html lang="en">
+      <body>{children}</body>
     </html>
   );
 }
