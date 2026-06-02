@@ -216,6 +216,14 @@ h3 { font-size: 22px; line-height: 1.15; }
 }
 .footer h2 { max-width: 760px; }
 .contact-link { white-space: nowrap; }
+.footer-links { display: flex; flex-direction: column; align-items: flex-end; gap: 16px; }
+.socials { display: flex; flex-wrap: wrap; gap: 18px; justify-content: flex-end; }
+.socials a { color: var(--muted); text-decoration: none; font-size: 0.95rem; transition: color 0.2s ease; }
+.socials a:hover { color: #fff; }
+@media (max-width: 980px) {
+  .footer-links { align-items: flex-start; }
+  .socials { justify-content: flex-start; }
+}
 
 @media (max-width: 1080px) {
   .four-grid, .principles-grid { grid-template-columns: repeat(2, 1fr); }

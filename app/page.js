@@ -100,7 +100,12 @@ function JsonLd() {
     url: 'https://andriipetruk.com',
     image: 'https://andriipetruk.com/andrii-portrait.png',
     jobTitle: ['Systems Researcher', 'Infrastructure Architect', 'AI Systems Builder'],
-    sameAs: [],
+    sameAs: [
+      'https://github.com/andriipetruk',
+      'https://www.linkedin.com/in/andriigpetruk/',
+      'https://medium.com/@AndriiPetruk',
+      'https://x.com/andriigpetruk'
+    ],
     knowsAbout: [
       'LLM reasoning safety',
       'AI-assisted system design',
@@ -322,7 +327,15 @@ export default function Home() {
           <p className="eyebrow">Contact</p>
           <h2>Let’s talk about reliable AI systems, infrastructure, or research.</h2>
         </div>
-        <a className="contact-link" href="mailto:hello@andriipetruk.com">hello@andriipetruk.com</a>
+        <div className="footer-links">
+          <a className="contact-link" href="mailto:hello@andriipetruk.com">hello@andriipetruk.com</a>
+          <nav className="socials" aria-label="Profiles">
+            <a href="https://github.com/andriipetruk" rel="me noopener" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/andriigpetruk/" rel="me noopener" target="_blank">LinkedIn</a>
+            <a href="https://medium.com/@AndriiPetruk" rel="me noopener" target="_blank">Medium</a>
+            <a href="https://x.com/andriigpetruk" rel="me noopener" target="_blank">X</a>
+          </nav>
+        </div>
       </footer>
     </main>
   );
