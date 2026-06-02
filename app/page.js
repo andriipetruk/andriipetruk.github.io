@@ -98,7 +98,7 @@ function JsonLd() {
     '@type': 'Person',
     name: 'Andrii Petruk',
     url: 'https://andriipetruk.com',
-    image: 'https://andriipetruk.com/andrii-portrait.png',
+    image: 'https://andriipetruk.com/andrii-portrait.jpg',
     jobTitle: ['Systems Researcher', 'Infrastructure Architect', 'AI Systems Builder'],
     sameAs: [
       'https://github.com/andriipetruk',
@@ -161,9 +161,9 @@ export default function Home() {
 
         <figure className="portrait-card">
           <Image
-            src="/andrii-portrait.png"
-            width={1200}
-            height={900}
+            src="/andrii-portrait.jpg"
+            width={1100}
+            height={880}
             priority
             alt="Portrait of Andrii Petruk"
           />

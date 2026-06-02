@@ -39,14 +39,14 @@ export const metadata = {
     type: 'website',
     url: 'https://andriipetruk.com',
     siteName: 'Andrii Petruk',
-    images: [{ url: '/andrii-portrait.png', width: 1200, height: 900, alt: 'Andrii Petruk portrait' }]
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Andrii Petruk — Systems Researcher, Infrastructure Architect, AI Systems Builder' }]
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Andrii Petruk — Systems Researcher & AI Systems Builder',
     description:
       'Research, essays, and projects on reliable AI, cloud-native systems, and autonomous infrastructure.',
-    images: ['/andrii-portrait.png']
+    images: [{ url: '/og-image.jpg', alt: 'Andrii Petruk — Systems Researcher, Infrastructure Architect, AI Systems Builder' }]
   },
   robots: {
     index: true,
